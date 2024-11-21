@@ -1,0 +1,59 @@
+.fundo{
+    background-color: rgb(0, 0, 0);
+}
+.borda2{
+    border-radius: 40;
+}
+.titulo{
+    color:darkmagenta;
+    font-size: 30pt;
+    font-family: "Aclonica", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.resto{
+    color:gold;
+    font-size: 15pt;
+    font-family: "Kode Mono", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+.titleNome{
+    color: aliceblue ;
+    font-size: 45pt;
+    font-family: "VT323", monospace;
+    font-style: normal;
+}
+#borda3{
+    border-style: solid;
+    border-color: gold;
+    border-radius: 4px;
+    padding: 0px 0px 7px 7px;
+}
+a{
+    text-decoration: none;
+    position:relative;
+    background: #ffd700;
+    color:#000;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-weight: 400;
+    padding: 10px 30px 4px;
+    transition: 0.5s;
+}
+a:hover{
+    background: var(--clr);
+    color: var(--clr);
+    letter-spacing: 0.25em;
+    box-shadow: 0 0 35px var(--clr);
+}
+a:before{
+    content:'';
+    position: absolute;
+    inset: 2px;
+    background: #000;
+}
+a span{
+    position: relative;
+    z-index: 1;
+}
