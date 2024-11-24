@@ -1,5 +1,57 @@
 {% extends 'base.html' %}
-{% block titulo_page %} Página Index {% endblock %}
+
+{% block titulo_page %} Home {% endblock %}
+
 {% block conteudo %}
     <h1>Bem-vindo ao nosso sistema web!!!</h1>
+{% endblock %}
+
+{% block cards %}
+<div class="row">
+                
+    <div class="col-lg-3">
+        <div class="card card-custom">
+            <div class="card-header card-header-custom">
+                <h5>Orders</h5>
+            </div>
+            <div class="card-body card-body-custom">
+               <h5>150</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="card card-custom">
+            <div class="card-header card-header-custom">
+                <h5>Bounce Rate</h5>
+            </div>
+            <div class="card-body card-body-custom">
+                <h5>53%</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="card card-custom">
+            <div class="card-header card-header-custom">
+                <h5>User Registrations</h5>
+            </div>
+            <div class="card-body card-body-custom">
+                <h5>44</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="card card-custom">
+            <div class="card-header card-header-custom">
+                <h5>Unique Visitors</h5>
+            </div>
+            <div class="card-body card-body-custom">
+                <h5>65</h5>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
 {% endblock %}

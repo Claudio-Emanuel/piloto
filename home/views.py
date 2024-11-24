@@ -39,3 +39,12 @@ def semana(request, num):
         return render(request, 'semana.html',{"mensagem":"Sabado-Feira"})
     else:
         return render(request, 'semana.html',{"mensagem":"O numero passado corresponde a um num invalido"})
+    
+def produto(request):
+    #dados que serao passados
+    context={
+        'username': 'Carlos',
+        'itens': ['lapis','Caneta','Borracha']
+    }
+    #Renderiza os dados
+    return render(request, 'produto.html',context)
