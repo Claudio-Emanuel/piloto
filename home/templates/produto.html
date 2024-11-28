@@ -1,16 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Bem vindo, {{ username }}!</h1>
-    <ul>
-        {% for item  in itens %}
-            <li>{{ itens }}</li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+
+{% extends "base.html" %}
+{% block titulo_page %} Produtos {% endblock %}
+{%block conteudo%} 
+    <table class="table table-bordered table-hover w-75 mx-auto">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Valor (R$)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in lista %}
+                <tr>
+                    <td> {{item.id}} </td>
+                    <td> {{item.nome}} </td>
+                    <td> {{item.preco}} </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+ {% endblock %}

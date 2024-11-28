@@ -43,8 +43,11 @@ def semana(request, num):
 def produto(request):
     #dados que serao passados
     context={
-        'username': 'Carlos',
-        'itens': ['lapis','Caneta','Borracha']
+        'lista': [
+            {'id':1, 'nome':'Notebook','preco':'R$2.500,00'},
+            {'id':2, 'nome':'Monitor','preco':'R$500,00'},
+            {'id':3, 'nome':'Teclado','preco':'R$80,00'},
+        ]
     }
     #Renderiza os dados
     return render(request, 'produto.html',context)
