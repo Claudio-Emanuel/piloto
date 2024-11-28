@@ -1,6 +1,5 @@
-from django.shortcuts import HttpResponse 
-from django.shortcuts import render
-
+from django.shortcuts import HttpResponse, render
+from .forms import ContatoForm
 # Create your views here.
 from django.http import HttpResponse
 
@@ -11,7 +10,11 @@ def sobre(request):
     return render(request,'sobre.html')
 
 def contato(request):
-    return render(request,'contato.html')
+    form = ContatoForm()
+    contexto =  {
+        'form': form,
+    }
+    return render(request,'contato.html',contexto)
 
 def ajuda():
     return HttpResponse("<h1>Esta eh a pagina de ajuda</h1>")

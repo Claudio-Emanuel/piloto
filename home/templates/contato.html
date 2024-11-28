@@ -2,6 +2,14 @@
 
 {% block titulo %} Contato {% endblock %}
 
+{% block titulo_page %} Contato {% endblock %}
+
 {% block conteudo %}
-    <h1>Entre em contato conosco no email: exemple@gmail.com</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }} <!-- Renderiza cada campo do formulário com <p> tags -->
+        <button type="submit">Enviar</button>
+    </form>
+
 {% endblock %}
