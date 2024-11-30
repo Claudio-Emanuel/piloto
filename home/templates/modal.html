@@ -1,0 +1,40 @@
+<div class="modal" id="excluir" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="excluir">Tem certeza disso?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Tem certeza que deseja excluir esse produto?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="confirmabtn" >Excluir</button>
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="confirma">
+  </div>
+  <script> 
+    const alertPlaceholder = document.getElementById('confirma')
+    const appendAlert = (message, type) => {
+    const wrapper = document.createElement('div')
+    wrapper.innerHTML = [
+        `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+        `   <div>${message}</div>`,
+        '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+        '</div>'
+    ].join('')
+
+    alertPlaceholder.append(wrapper)
+    }
+
+    const alertTrigger = document.getElementById('confirmabtn')
+    if (alertTrigger) {
+    alertTrigger.addEventListener('click', () => {
+        appendAlert('Produdo excluido com sucesso', 'success')
+    })
+    }
+  </script>

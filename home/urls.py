@@ -12,4 +12,8 @@ urlpatterns = [
     path('perfil/<str:usuario>/',views.perfil, name='perfil'),
     path('diasemana/<int:num>',views.semana, name='semana'),
     path('produto', views.produto, name='produto'),
+    path('produto/form', views.formproduto, name='formproduto'),
+    path('produtos/detalhes/10', views.detalhes_produto, name='detalhes'),
+    path('produtos/editar/10', views.formproduto, name='edit_produto'),
+    path('produtos/excluir/10', views.excluir_produto, name='del_produto')
 ]

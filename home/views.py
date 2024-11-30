@@ -1,14 +1,21 @@
 from django.shortcuts import HttpResponse, render
-from .forms import ContatoForm
+from .forms import ContatoForm, ProdutoForm
 # Create your views here.
 from django.http import HttpResponse
 
+
+#------------Funcao de Home/Tela Inicial------------   
 def index(request):
     return render(request,'index.html')
+
+
+#------------Funcao nao importante------------   
 
 def sobre(request):
     return render(request,'sobre.html')
 
+
+#-----------Funcao de formulario de contato------------   
 def contato(request):
     form = ContatoForm()
     contexto =  {
@@ -16,6 +23,8 @@ def contato(request):
     }
     return render(request,'contato.html',contexto)
 
+
+#------------Funcao de Encher Linguica------------   
 def ajuda():
     return HttpResponse("<h1>Esta eh a pagina de ajuda</h1>")
 
@@ -25,6 +34,7 @@ def exibir_item(request, id):
 def perfil(request, usuario):
     return render(request, 'perfil.html',{'str':usuario})
 
+#------------Funcao de Dia da semana------------   
 def semana(request, num):
     if num==1 :
         return render(request, 'semana.html',{"mensagem":"Domingo"})
@@ -43,6 +53,8 @@ def semana(request, num):
     else:
         return render(request, 'semana.html',{"mensagem":"O numero passado corresponde a um num invalido"})
     
+
+#------------Funcao de Produto com a Lista de Produtos------------    
 def produto(request):
     #dados que serao passados
     context={
@@ -54,3 +66,22 @@ def produto(request):
     }
     #Renderiza os dados
     return render(request, 'produto.html',context)
+
+
+#------------Funcao de Formulario de cadastro de produto------------   
+def formproduto(request):
+    form= ProdutoForm()
+    contexto= {
+        'form':form
+    }
+    return render(request,'formproduto.html',contexto)
+
+#------------Funcao dos botoes de produto------------ 
+def detalhes_produto(request,id):
+    return render(request)
+
+def editar_produto(request,id):
+    return render()
+
+def excluir_produto(request,id):
+    return render()
